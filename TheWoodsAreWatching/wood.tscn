@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcnwgrbpe11qy"]
+
+[ext_resource type="Texture2D" uid="uid://bbxt7w0eg6tvp" path="res://icon.svg" id="1_fm5dc"]
+[ext_resource type="Script" uid="uid://c0eermu3tar5b" path="res://wood.gd" id="1_gcmtl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0k7y"]
+radius = 13.1529
+
+[node name="Wood" type="Area2D"]
+script = ExtResource("1_gcmtl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.210937, 0.078125)
+texture = ExtResource("1_fm5dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l0k7y")
