@@ -44,6 +44,8 @@ func _physics_process(delta: float) -> void:
 		moveDir = moveDir.normalized()
 		moveDir.y = moveDir.y * compressor.yCompress
 	
+	
 	velocity = moveDir * speed
 	
 	move_and_slide()
+	

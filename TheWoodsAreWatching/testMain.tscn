@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://ftdylny7f22s"]
+[gd_scene load_steps=8 format=3 uid="uid://ftdylny7f22s"]
 
 [ext_resource type="Texture2D" uid="uid://blssupljk2i0y" path="res://worldBorderMockup.png" id="1_qiiyx"]
 [ext_resource type="PackedScene" uid="uid://cmgj7ujop7f8w" path="res://player.tscn" id="1_wi5su"]
 [ext_resource type="Script" uid="uid://dfwph2m28776m" path="res://ui.gd" id="2_5haja"]
 [ext_resource type="PackedScene" uid="uid://dcnwgrbpe11qy" path="res://wood.tscn" id="2_hk42g"]
 [ext_resource type="PackedScene" uid="uid://dlhg8qxhwsm2a" path="res://fire.tscn" id="4_5haja"]
+[ext_resource type="PackedScene" uid="uid://b12342p7kb016" path="res://wall.tscn" id="6_w1t20"]
+[ext_resource type="Texture2D" uid="uid://brt2q321qm1o" path="res://PlaceHolderTreeFromGoogle.webp" id="7_j5va5"]
 
 [node name="TestMain" type="Node2D"]
 
@@ -33,3 +35,12 @@ text = "Wood: 0"
 
 [node name="Fire" parent="." instance=ExtResource("4_5haja")]
 position = Vector2(720, 223)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("6_w1t20")]
+position = Vector2(127, 252)
+scale = Vector2(2.52, 2)
+
+[node name="PlaceHolderTreeFromGoogle" type="Sprite2D" parent="."]
+position = Vector2(119, 235)
+scale = Vector2(0.256836, 0.438477)
+texture = ExtResource("7_j5va5")
