@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://ftdylny7f22s"]
+[gd_scene load_steps=6 format=3 uid="uid://ftdylny7f22s"]
 
+[ext_resource type="Texture2D" uid="uid://blssupljk2i0y" path="res://worldBorderMockup.png" id="1_qiiyx"]
 [ext_resource type="PackedScene" uid="uid://cmgj7ujop7f8w" path="res://player.tscn" id="1_wi5su"]
 [ext_resource type="Script" uid="uid://dfwph2m28776m" path="res://ui.gd" id="2_5haja"]
 [ext_resource type="PackedScene" uid="uid://dcnwgrbpe11qy" path="res://wood.tscn" id="2_hk42g"]
+[ext_resource type="PackedScene" uid="uid://dlhg8qxhwsm2a" path="res://fire.tscn" id="4_5haja"]
 
 [node name="TestMain" type="Node2D"]
+
+[node name="WorldBorderMockup" type="Sprite2D" parent="."]
+position = Vector2(550, 301)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_qiiyx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Player" parent="." groups=["wood"] instance=ExtResource("1_wi5su")]
 position = Vector2(523, 309)
@@ -21,3 +30,6 @@ theme_override_font_sizes/font_size = 46
 text = "Wood: 0"
 
 [node name="Wood" parent="." instance=ExtResource("2_hk42g")]
+
+[node name="Fire" parent="." instance=ExtResource("4_5haja")]
+position = Vector2(720, 223)
