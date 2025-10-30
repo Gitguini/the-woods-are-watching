@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ftdylny7f22s"]
+[gd_scene load_steps=11 format=3 uid="uid://ftdylny7f22s"]
 
 [ext_resource type="Texture2D" uid="uid://blssupljk2i0y" path="res://worldBorderMockup.png" id="1_qiiyx"]
 [ext_resource type="PackedScene" uid="uid://cmgj7ujop7f8w" path="res://player.tscn" id="1_wi5su"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dlhg8qxhwsm2a" path="res://fire.tscn" id="4_5haja"]
 [ext_resource type="PackedScene" uid="uid://b12342p7kb016" path="res://wall.tscn" id="6_w1t20"]
 [ext_resource type="Texture2D" uid="uid://brt2q321qm1o" path="res://PlaceHolderTreeFromGoogle.webp" id="7_j5va5"]
+[ext_resource type="PackedScene" uid="uid://cue2r6iw5wum6" path="res://objective_collectible.tscn" id="8_wwql1"]
+[ext_resource type="Texture2D" uid="uid://bbxt7w0eg6tvp" path="res://icon.svg" id="9_getfk"]
+[ext_resource type="PackedScene" uid="uid://brxypatsocv8n" path="res://objective_dropoff_point.tscn" id="10_o0oog"]
 
 [node name="TestMain" type="Node2D"]
 
@@ -44,3 +47,29 @@ scale = Vector2(2.52, 2)
 position = Vector2(119, 235)
 scale = Vector2(0.256836, 0.438477)
 texture = ExtResource("7_j5va5")
+
+[node name="objective1" parent="." instance=ExtResource("8_wwql1")]
+position = Vector2(45, 466)
+
+[node name="Sprite2D" type="Sprite2D" parent="objective1"]
+scale = Vector2(0.382813, 0.296875)
+texture = ExtResource("9_getfk")
+
+[node name="objective2" parent="." instance=ExtResource("8_wwql1")]
+position = Vector2(94, 588)
+Type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="objective2"]
+scale = Vector2(0.429688, 0.257813)
+texture = ExtResource("9_getfk")
+
+[node name="objective3" parent="." instance=ExtResource("8_wwql1")]
+position = Vector2(315, 579)
+Type = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objective3"]
+scale = Vector2(0.414063, 0.296875)
+texture = ExtResource("9_getfk")
+
+[node name="ObjectiveDropoffPoint" parent="." instance=ExtResource("10_o0oog")]
+position = Vector2(723, 486)
