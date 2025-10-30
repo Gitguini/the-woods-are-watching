@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci11qaufqb1c4"]
+
+[ext_resource type="Script" uid="uid://c1vljrbt5do4p" path="res://obstruction.gd" id="1_4fghw"]
+[ext_resource type="Texture2D" uid="uid://brt2q321qm1o" path="res://PlaceHolderTreeFromGoogle.webp" id="2_b6uxa"]
+[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://world_item_manager.tscn" id="3_b6uxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blfnc"]
+size = Vector2(50, 10)
+
+[node name="Obstruction" type="StaticBody2D"]
+script = ExtResource("1_4fghw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_blfnc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.201563, 0.229316)
+texture = ExtResource("2_b6uxa")
+offset = Vector2(0, -180)
+
+[node name="WorldItemManager" parent="." instance=ExtResource("3_b6uxa")]

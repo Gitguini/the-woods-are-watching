@@ -35,12 +35,10 @@ height = 405.26
 script = ExtResource("1_5ltu8")
 
 [node name="FireCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_icfi2")
 
 [node name="WorldItemManager" parent="." instance=ExtResource("2_x6ecg")]
-basePointY = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.289063, 0.265625)
@@ -53,6 +51,5 @@ texture = SubResource("GradientTexture2D_r2yji")
 [node name="FearRadius" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FearRadius"]
-position = Vector2(0, 5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_x6ecg")

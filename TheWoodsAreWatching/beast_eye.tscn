@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgv2gcaowmwn7"]
+
+[ext_resource type="Script" uid="uid://dt126e433jpkh" path="res://beast_eye.gd" id="1_uc3mg"]
+[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://world_item_manager.tscn" id="2_4qmad"]
+
+[node name="BeastEye" type="Node2D"]
+script = ExtResource("1_uc3mg")
+
+[node name="WorldItemManager" parent="." instance=ExtResource("2_4qmad")]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

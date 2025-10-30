@@ -48,16 +48,15 @@ height = 60.56
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_onrkg")
-basePointY = 20
 colRadius = 40
 
 [node name="WorldItemManager" parent="." instance=ExtResource("3_i3pqv")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 2)
 scale = Vector2(0.0597115, 0.0585904)
 sprite_frames = SubResource("SpriteFrames_hqtel")
 animation = &"down"
+offset = Vector2(0, -700)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
@@ -65,6 +64,5 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 20)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_i3pqv")

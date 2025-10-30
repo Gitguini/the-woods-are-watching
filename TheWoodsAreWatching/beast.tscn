@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6b3t18j6iehb"]
+
+[ext_resource type="Script" uid="uid://5m0acfkyxmsw" path="res://beast.gd" id="1_4wkv2"]
+[ext_resource type="Texture2D" uid="uid://bbxt7w0eg6tvp" path="res://icon.svg" id="1_40kp3"]
+[ext_resource type="PackedScene" uid="uid://cgv2gcaowmwn7" path="res://beast_eye.tscn" id="2_4wkv2"]
+[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://world_item_manager.tscn" id="4_jfyys"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfyys"]
+radius = 30.28
+height = 152.21
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpop0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_40kp3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Beast" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_4wkv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jfyys")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -26)
+scale = Vector2(1, 0.632813)
+sprite_frames = SubResource("SpriteFrames_kpop0")
+
+[node name="BeastEye" parent="." instance=ExtResource("2_4wkv2")]
+
+[node name="WorldItemManager" parent="." instance=ExtResource("4_jfyys")]

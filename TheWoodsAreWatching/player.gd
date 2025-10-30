@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @export var speed = 200
 
-@export var basePointX = 0
-@export var basePointY = 0
 @export var colRadius = 0
 
 @onready var animated_sprite_2D: AnimatedSprite2D = $AnimatedSprite2D
@@ -16,8 +14,6 @@ func _ready() -> void:
 	compressor = $WorldItemManager
 	collisionThing = $CollisionShape2D
 	
-	collisionThing.position.x = basePointX
-	collisionThing.position.y = basePointY
 	collisionThing.shape.radius = colRadius
 	
 	
