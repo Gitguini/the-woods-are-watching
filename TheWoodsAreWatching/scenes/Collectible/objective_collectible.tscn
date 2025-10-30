@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cue2r6iw5wum6"]
 
-[ext_resource type="Script" uid="uid://dj0nhdobt0r58" path="res://objective_collectible.gd" id="1_44av5"]
-[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://world_item_manager.tscn" id="2_yerui"]
+[ext_resource type="Script" uid="uid://dj0nhdobt0r58" path="res://scripts/objective_collectible.gd" id="1_44av5"]
+[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://scenes/world_item_manager.tscn" id="2_yerui"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8umoq"]
 radius = 8.0

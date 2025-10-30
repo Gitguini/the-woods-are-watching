@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://ftdylny7f22s"]
+
+[ext_resource type="Texture2D" uid="uid://blssupljk2i0y" path="res://sprites/worldBorderMockup.png" id="1_e0b43"]
+[ext_resource type="PackedScene" uid="uid://cmgj7ujop7f8w" path="res://scenes/player.tscn" id="2_a6ukn"]
+[ext_resource type="Script" uid="uid://dfwph2m28776m" path="res://scripts/ui.gd" id="3_r5fs2"]
+[ext_resource type="PackedScene" uid="uid://dcnwgrbpe11qy" path="res://scenes/Collectible/wood.tscn" id="4_bh6ie"]
+[ext_resource type="PackedScene" uid="uid://dlhg8qxhwsm2a" path="res://scenes/fire.tscn" id="5_5dkb0"]
+[ext_resource type="PackedScene" uid="uid://cue2r6iw5wum6" path="res://scenes/Collectible/objective_collectible.tscn" id="6_s5ul1"]
+[ext_resource type="Texture2D" uid="uid://bbxt7w0eg6tvp" path="res://sprites/icon.svg" id="7_220vc"]
+[ext_resource type="PackedScene" uid="uid://brxypatsocv8n" path="res://scenes/objective_dropoff_point.tscn" id="8_xlkv8"]
+[ext_resource type="PackedScene" uid="uid://ci11qaufqb1c4" path="res://scenes/Obstructions/obstruction.tscn" id="9_01rew"]
+
+[node name="TestMain" type="Node2D"]
+y_sort_enabled = true
+
+[node name="WorldBorderMockup" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(550, 301)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_e0b43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Player" parent="." groups=["wood"] instance=ExtResource("2_a6ukn")]
+y_sort_enabled = true
+position = Vector2(440, 368)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_r5fs2")
+
+[node name="woodLabel" type="Label" parent="UI"]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 884.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 46
+text = "Wood: 0"
+
+[node name="Wood" parent="." instance=ExtResource("4_bh6ie")]
+position = Vector2(284, 145)
+
+[node name="Fire" parent="." instance=ExtResource("5_5dkb0")]
+position = Vector2(720, 223)
+
+[node name="objective1" parent="." instance=ExtResource("6_s5ul1")]
+position = Vector2(45, 466)
+
+[node name="Sprite2D" type="Sprite2D" parent="objective1"]
+scale = Vector2(0.382813, 0.296875)
+texture = ExtResource("7_220vc")
+
+[node name="objective2" parent="." instance=ExtResource("6_s5ul1")]
+position = Vector2(94, 588)
+Type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="objective2"]
+scale = Vector2(0.429688, 0.257813)
+texture = ExtResource("7_220vc")
+
+[node name="objective3" parent="." instance=ExtResource("6_s5ul1")]
+position = Vector2(315, 579)
+Type = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objective3"]
+scale = Vector2(0.414063, 0.296875)
+texture = ExtResource("7_220vc")
+
+[node name="ObjectiveDropoffPoint" parent="." instance=ExtResource("8_xlkv8")]
+position = Vector2(723, 486)
+
+[node name="Big Tree" parent="." instance=ExtResource("9_01rew")]
+y_sort_enabled = true
+position = Vector2(-6, 202)
+scale = Vector2(5.44, 5.44)
+hitboxRadius = 150

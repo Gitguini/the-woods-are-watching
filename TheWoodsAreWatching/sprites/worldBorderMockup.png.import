@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceumm4y0kaudg"
-path="res://.godot/imported/Pumpkin_Witch_Vers3.png-caffdafede22c41d2f2e9de5ce984008.ctex"
+uid="uid://blssupljk2i0y"
+path="res://.godot/imported/worldBorderMockup.png-60ff056c5409a25a4c6a02627db25c1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pumpkin_Witch_Vers3.png"
-dest_files=["res://.godot/imported/Pumpkin_Witch_Vers3.png-caffdafede22c41d2f2e9de5ce984008.ctex"]
+source_file="res://sprites/worldBorderMockup.png"
+dest_files=["res://.godot/imported/worldBorderMockup.png-60ff056c5409a25a4c6a02627db25c1d.ctex"]
 
 [params]
 

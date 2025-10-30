@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dlhg8qxhwsm2a"]
 
-[ext_resource type="Script" uid="uid://lx5d1j1seq8j" path="res://fire.gd" id="1_5ltu8"]
-[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://world_item_manager.tscn" id="2_x6ecg"]
-[ext_resource type="Texture2D" uid="uid://bbxt7w0eg6tvp" path="res://icon.svg" id="3_x6ecg"]
+[ext_resource type="Script" uid="uid://lx5d1j1seq8j" path="res://scripts/fire.gd" id="1_5ltu8"]
+[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://scenes/world_item_manager.tscn" id="2_x6ecg"]
+[ext_resource type="Texture2D" uid="uid://bbxt7w0eg6tvp" path="res://sprites/icon.svg" id="3_x6ecg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_icfi2"]
 height = 56.0

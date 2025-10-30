@@ -13,11 +13,11 @@ config_version=5
 config/name="The Woods Are Watching"
 run/main_scene="uid://ftdylny7f22s"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://scripts/Global.gd"
 
 [input]
 

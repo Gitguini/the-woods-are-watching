@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 	#set the hitbox to be a size indicated by the hitboxRadius and yCompress
 	#I've built a function for determining this into the worldItemManager script
-	#$CollisionShape2D.shape.size.x = $WorldItemManager.getRectHitboxWidth(hitboxRadius)
+	#w$CollisionShape2D.shape.size.x = $WorldItemManager.getRectHitboxWidth(hitboxRadius)
 	#$CollisionShape2D.shape.size.y = $WorldItemManager.getRectHitboxHeight(hitboxRadius)
 	pass
 	

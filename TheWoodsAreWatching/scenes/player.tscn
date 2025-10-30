@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://cmgj7ujop7f8w"]
 
-[ext_resource type="Script" uid="uid://dl0sgkrkvd624" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://ceumm4y0kaudg" path="res://Pumpkin_Witch_Vers3.png" id="3_2hs0m"]
-[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://world_item_manager.tscn" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://bwrq5gdbehvt4" path="res://Pumpkin_Witch_Left.png" id="4_1jxqw"]
-[ext_resource type="Texture2D" uid="uid://bow7aamq3xo6w" path="res://Pumpkin_Witch_Right.png" id="5_dw050"]
-[ext_resource type="Texture2D" uid="uid://bdrf7wydgllm2" path="res://Pumpkin_Witch_Back.png" id="6_b26j0"]
+[ext_resource type="Script" uid="uid://dl0sgkrkvd624" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ceumm4y0kaudg" path="res://sprites/Characters/Pumpkin_Witch_Vers3.png" id="3_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://scenes/world_item_manager.tscn" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bwrq5gdbehvt4" path="res://sprites/Characters/Pumpkin_Witch_Left.png" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bow7aamq3xo6w" path="res://sprites/Characters/Pumpkin_Witch_Right.png" id="5_dw050"]
+[ext_resource type="Texture2D" uid="uid://bdrf7wydgllm2" path="res://sprites/Characters/Pumpkin_Witch_Back.png" id="6_b26j0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
 animations = [{

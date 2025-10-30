@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bow7aamq3xo6w"
-path="res://.godot/imported/Pumpkin_Witch_Right.png-e78042d89dab8d6b5e9b107e49dc8d5e.ctex"
+path="res://.godot/imported/Pumpkin_Witch_Right.png-e46ebe195d2cb4f1510ab8ec4398908c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pumpkin_Witch_Right.png"
-dest_files=["res://.godot/imported/Pumpkin_Witch_Right.png-e78042d89dab8d6b5e9b107e49dc8d5e.ctex"]
+source_file="res://sprites/Characters/Pumpkin_Witch_Right.png"
+dest_files=["res://.godot/imported/Pumpkin_Witch_Right.png-e46ebe195d2cb4f1510ab8ec4398908c.ctex"]
 
 [params]
 
