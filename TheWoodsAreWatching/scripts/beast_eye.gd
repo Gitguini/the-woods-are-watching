@@ -14,14 +14,13 @@ func _start():
 #2. the player is within an angle of sightSpread from the eye's current direction
 #3. there are no sight-blocking objects between this eye and the player
 func lookForPoint(point) -> bool:
-	
-	#test 1: within sight radius
-	if position.distance_to(point) > sightRadius:
+	#test 1: within sight radiuas
+	if global_position.distance_to(point) > sightRadius:
 		return false
 	
 	#test 2: within angle of sightSpread
 	var forwardAngle = transform.get_rotation();
-	var angleToPlayer = position.angle_to_point(point)
+	var angleToPlayer = global_position.angle_to_point(point)
 	if (abs(forwardAngle - angleToPlayer) > sightSpread):
 		return false
 	
@@ -34,13 +33,10 @@ func lookForPoint(point) -> bool:
 	#and setting the target position, Relative To The Eye
 	#so by first translating the player's position to 'position relative to the eye', all is good
 	$RayCast2D.force_raycast_update()
-	print("target position: ", $RayCast2D.target_position)
 	var obstructingObject = $RayCast2D.get_collider()
 	if (obstructingObject == null):
 		return false
 	elif (obstructingObject.name != "Player"):
 		return false
-	
-	
 	
 	return true

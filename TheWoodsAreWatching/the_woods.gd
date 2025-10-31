@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var beastScene: PackedScene
+
 @export var obstructionScene: PackedScene
 @export var woodScene: PackedScene
 @export var numberOfObstructions: int

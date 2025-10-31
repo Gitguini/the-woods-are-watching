@@ -4,6 +4,9 @@ signal Victory
 
 
 func _ready() -> void:
+	$Crystal0.visible = false
+	$Skull1.visible = false
+	$Bacon2.visible = false
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 
@@ -17,6 +20,14 @@ func _on_body_entered(body):
 		for n in range(3):
 			if Global.heldObjectives[n] == 1:
 				print("Dropping objective number ", n)
+				
+				if n==0:
+					$Crystal0.visible = true
+				elif n==1:
+					$Skull1.visible = true
+				else:
+					$Bacon2.visible = true
+				
 				Global.heldObjectives[n] = 0
 				Global.collectedObjectives[n] = 1
 			

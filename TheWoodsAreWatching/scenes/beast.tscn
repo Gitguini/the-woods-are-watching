@@ -34,6 +34,27 @@ scale = Vector2(1, 0.632813)
 sprite_frames = SubResource("SpriteFrames_kpop0")
 
 [node name="BeastEye" parent="." instance=ExtResource("3_k885b")]
-position = Vector2(0, -53)
 
 [node name="WorldItemManager" parent="." instance=ExtResource("4_glk8t")]
+
+[node name="ChaseAttentionSpanTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="FearTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="SniffTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="StartupTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="ChaseAttentionSpanTimer" to="." method="_on_chase_attention_span_timer_timeout"]
+[connection signal="timeout" from="FearTimer" to="." method="_on_fear_timer_timeout"]
+[connection signal="timeout" from="SniffTimer" to="." method="_on_sniff_timer_timeout"]
+[connection signal="timeout" from="StartupTimer" to="." method="_on_startup_timer_timeout"]

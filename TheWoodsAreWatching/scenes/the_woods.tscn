@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://lk7up7h4ai2o"]
+[gd_scene load_steps=26 format=3 uid="uid://lk7up7h4ai2o"]
 
 [ext_resource type="Script" uid="uid://lbm6iec6pak8" path="res://the_woods.gd" id="1_cwwr0"]
 [ext_resource type="Texture2D" uid="uid://cp1cx6l70e2bh" path="res://sprites/Environment/Ground/revisedGround.png" id="1_q8msk"]
+[ext_resource type="PackedScene" uid="uid://c6b3t18j6iehb" path="res://scenes/beast.tscn" id="2_jaks5"]
 [ext_resource type="PackedScene" uid="uid://cmgj7ujop7f8w" path="res://scenes/player.tscn" id="2_ydvj3"]
 [ext_resource type="Texture2D" uid="uid://cajjyep5kdx0" path="res://sprites/Environment/Ground/revisedGround2.png" id="3_ydvj3"]
 [ext_resource type="Texture2D" uid="uid://cggqo3gdujhuh" path="res://sprites/Environment/worldBorder/borderBottom.png" id="4_8w8lk"]
@@ -39,6 +40,7 @@ distance = -3700.0
 [node name="TheWoods" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_cwwr0")
+beastScene = ExtResource("2_jaks5")
 obstructionScene = ExtResource("13_a4ory")
 woodScene = ExtResource("15_flcmy")
 numberOfObstructions = 100
@@ -377,7 +379,8 @@ z_index = -1
 position = Vector2(0, -358)
 
 [node name="Focus1" parent="." instance=ExtResource("9_g7c4m")]
-position = Vector2(-577, 139)
+position = Vector2(-15, -1214)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Focus1"]
 scale = Vector2(0.125, 0.125)
@@ -385,8 +388,9 @@ texture = ExtResource("10_pv33l")
 offset = Vector2(0, -100)
 
 [node name="Focus2" parent="." instance=ExtResource("9_g7c4m")]
-position = Vector2(-503, 218)
+position = Vector2(-3242, -1721)
 type = 1
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Focus2"]
 scale = Vector2(0.125, 0.125)
@@ -394,12 +398,18 @@ texture = ExtResource("11_a4ory")
 offset = Vector2(0, -50)
 
 [node name="Focus3" parent="." instance=ExtResource("9_g7c4m")]
-position = Vector2(-373, 298)
+position = Vector2(2142, 823)
 type = 2
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Focus3"]
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("12_cwwr0")
 offset = Vector2(0, -100)
 
+[node name="Beast" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("2_jaks5")]
+position = Vector2(3196, -1692)
+Player = NodePath("../Player")
+
+[connection signal="body_entered" from="Fire" to="Beast" method="_on_fire_body_entered"]
 [connection signal="Victory" from="ObjectiveDropoffPoint" to="." method="_on_objective_dropoff_point_victory"]

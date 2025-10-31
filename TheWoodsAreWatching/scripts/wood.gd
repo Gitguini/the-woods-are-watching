@@ -36,5 +36,6 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Player":
 		Global.wood += 1
+		Global.emit_signal("pickup_noise", position)
 		Global.emit_signal("wood_changed", Global.wood)
 		queue_free()
