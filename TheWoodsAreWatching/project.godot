@@ -37,6 +37,11 @@ config/icon="res://sprites/icon.svg"
 [autoload]
 
 Global="*res://scripts/Global.gd"
+FmodManager="*res://addons/fmod/FmodManager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [input]
 
