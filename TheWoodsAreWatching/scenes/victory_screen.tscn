@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6buwg0hjhvli"]
+
+[ext_resource type="Texture2D" uid="uid://cm1xr0erssjg8" path="res://sprites/UI/Victory_Screen.png" id="1_ujlt3"]
+
+[node name="VictoryScreen" type="Node2D"]
+
+[node name="VictoryScreen" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_ujlt3")

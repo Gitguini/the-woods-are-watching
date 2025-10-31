@@ -10,6 +10,7 @@ script = ExtResource("1_uc3mg")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collision_mask = 2
+collide_with_areas = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = -6.0

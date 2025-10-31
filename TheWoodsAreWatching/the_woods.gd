@@ -35,3 +35,9 @@ func getSpawnPos()->Vector2:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_objective_dropoff_point_victory() -> void:
+	var victoryScene = preload("res://scenes/victory_screen.tscn").instantiate()
+	get_tree().root.add_child(victoryScene)
+	get_node("/root/TheWoods").queue_free()

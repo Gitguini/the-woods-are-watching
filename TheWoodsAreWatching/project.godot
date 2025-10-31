@@ -30,7 +30,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="The Woods Are Watching"
-run/main_scene="uid://ftdylny7f22s"
+run/main_scene="uid://djww75slaxvqn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 
