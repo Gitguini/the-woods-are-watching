@@ -1,9 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6b3t18j6iehb"]
+[gd_scene load_steps=19 format=3 uid="uid://c6b3t18j6iehb"]
 
 [ext_resource type="Script" uid="uid://5m0acfkyxmsw" path="res://scripts/beast.gd" id="1_eu2dt"]
-[ext_resource type="Texture2D" uid="uid://bbxt7w0eg6tvp" path="res://sprites/icon.svg" id="2_vti8j"]
+[ext_resource type="Texture2D" uid="uid://cpimjk1vixyaq" path="res://sprites/Characters/Beast/BeastDown3.png" id="2_es1ko"]
+[ext_resource type="Texture2D" uid="uid://dnlax5nrxavod" path="res://sprites/Characters/Beast/BeastLeft3.png" id="3_5nggo"]
 [ext_resource type="PackedScene" uid="uid://cgv2gcaowmwn7" path="res://scenes/beast_eye.tscn" id="3_k885b"]
+[ext_resource type="Texture2D" uid="uid://8s81tgrhvqxh" path="res://sprites/Characters/Beast/BeastRight3.png" id="4_bih8s"]
 [ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://scenes/world_item_manager.tscn" id="4_glk8t"]
+[ext_resource type="Texture2D" uid="uid://d2y55n2r16a6f" path="res://sprites/Characters/Beast/BeastUp3.png" id="5_28mw1"]
+[ext_resource type="Texture2D" uid="uid://pm1a1a3i1hib" path="res://sprites/Characters/Beast/BeastDown2.png" id="6_w4sgh"]
+[ext_resource type="Texture2D" uid="uid://no3i6gsyacug" path="res://sprites/Characters/Beast/BeastLeft2.png" id="7_744vi"]
+[ext_resource type="Texture2D" uid="uid://ck0ioxea1ja37" path="res://sprites/Characters/Beast/BeastRight2.png" id="8_4ne6h"]
+[ext_resource type="Texture2D" uid="uid://d00bep2qyud8y" path="res://sprites/Characters/Beast/BeastUp2.png" id="9_8nr6x"]
+[ext_resource type="Texture2D" uid="uid://d5lmxriqy3m" path="res://sprites/Characters/Beast/BeastDown1.png" id="10_iiyjl"]
+[ext_resource type="Texture2D" uid="uid://bwoldeubj1cxw" path="res://sprites/Characters/Beast/BeastLeft1.png" id="11_57rp2"]
+[ext_resource type="Texture2D" uid="uid://dxxgyb0kojj1r" path="res://sprites/Characters/Beast/BeastRight1.png" id="12_6o5sa"]
+[ext_resource type="Texture2D" uid="uid://chf635nrjsoju" path="res://sprites/Characters/Beast/BeastUp1.png" id="13_67n2u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfyys"]
 radius = 30.28
@@ -13,12 +24,104 @@ height = 152.21
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vti8j")
+"texture": ExtResource("2_es1ko")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"chaseDown",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5nggo")
+}],
+"loop": true,
+"name": &"chaseLeft",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bih8s")
+}],
+"loop": true,
+"name": &"chaseRight",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_28mw1")
+}],
+"loop": true,
+"name": &"chaseUp",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_w4sgh")
+}],
+"loop": true,
+"name": &"stalkDown",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_744vi")
+}],
+"loop": true,
+"name": &"stalkLeft",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4ne6h")
+}],
+"loop": true,
+"name": &"stalkRight",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8nr6x")
+}],
+"loop": true,
+"name": &"stalkUp",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_iiyjl")
+}],
+"loop": true,
+"name": &"walkDown",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_57rp2")
+}],
+"loop": true,
+"name": &"walkLeft",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6o5sa")
+}],
+"loop": true,
+"name": &"walkRight",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_67n2u")
+}],
+"loop": true,
+"name": &"walkUp",
+"speed": 0.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_es1ko"]
+radius = 40.42
+height = 182.08
 
 [node name="Beast" type="CharacterBody2D"]
 motion_mode = 1
@@ -29,11 +132,40 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jfyys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -26)
-scale = Vector2(1, 0.632813)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_kpop0")
+animation = &"chaseUp"
+offset = Vector2(0, -200)
 
 [node name="BeastEye" parent="." instance=ExtResource("3_k885b")]
-position = Vector2(0, -53)
 
 [node name="WorldItemManager" parent="." instance=ExtResource("4_glk8t")]
+
+[node name="ChaseAttentionSpanTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="FearTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="SniffTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="StartupTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_es1ko")
+
+[connection signal="timeout" from="ChaseAttentionSpanTimer" to="." method="_on_chase_attention_span_timer_timeout"]
+[connection signal="timeout" from="FearTimer" to="." method="_on_fear_timer_timeout"]
+[connection signal="timeout" from="SniffTimer" to="." method="_on_sniff_timer_timeout"]
+[connection signal="timeout" from="StartupTimer" to="." method="_on_startup_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

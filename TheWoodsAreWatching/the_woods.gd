@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var beastScene: PackedScene
+
 @export var obstructionScene: PackedScene
 @export var woodScene: PackedScene
 @export var numberOfObstructions: int
@@ -40,4 +42,10 @@ func _process(delta: float) -> void:
 func _on_objective_dropoff_point_victory() -> void:
 	var victoryScene = preload("res://scenes/victory_screen.tscn").instantiate()
 	get_tree().root.add_child(victoryScene)
+	get_node("/root/TheWoods").queue_free()
+
+
+func _on_beast_caught_you() -> void:
+	var gameOverScreen = preload("res://scenes/game_over.tscn").instantiate()
+	get_tree().root.add_child(gameOverScreen)
 	get_node("/root/TheWoods").queue_free()

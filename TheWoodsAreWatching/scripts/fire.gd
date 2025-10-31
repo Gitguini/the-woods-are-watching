@@ -5,8 +5,9 @@ extends Area2D
 @export var fearRadiusBase = 100
 @export var fearRadiusMultiplier = 3
 
-@export var lightStrengthBase = 1
-@export var lightMultiplier = 1
+@export var lightStrengthBase = 2
+@export var lightStrengthCap = 20
+@export var lightMultiplier = 0.25
 
 var ableToReceiveFuel: bool
 
@@ -37,7 +38,7 @@ func _process(delta: float) -> void:
 	
 	if burnTimer > 0:
 		#TODO: add light flickering effect where something gets added to this based on a sin/noise function of Time
-		fireLight.texture_scale = lightStrengthBase + burnTimer * lightMultiplier
+		fireLight.texture_scale = clamp(lightStrengthBase + lightMultiplier*burnTimer, 0, lightStrengthCap)
 	else:
 		fireLight.texture_scale = 0.0
 		ableToReceiveFuel = false
