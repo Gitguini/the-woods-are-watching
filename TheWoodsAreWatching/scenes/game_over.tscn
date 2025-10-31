@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bogri0mdbkocc"]
+
+[ext_resource type="Script" uid="uid://dqtqwapijrb5h" path="res://scenes/game_over.gd" id="1_wqhvx"]
+[ext_resource type="Texture2D" uid="uid://4vx14q4puq1r" path="res://sprites/UI/Game_Over_Screen.png" id="1_y26ei"]
+[ext_resource type="PackedScene" uid="uid://djww75slaxvqn" path="res://scenes/title_screen.tscn" id="2_tbwuq"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_wqhvx")
+packedMenu = ExtResource("2_tbwuq")
+
+[node name="GameOverScreen" type="Sprite2D" parent="."]
+position = Vector2(573.5, 324)
+scale = Vector2(1.79219, 1.8)
+texture = ExtResource("1_y26ei")
+
+[node name="Button" type="Button" parent="."]
+offset_top = 551.0
+offset_right = 188.0
+offset_bottom = 648.0
+text = "Return..."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

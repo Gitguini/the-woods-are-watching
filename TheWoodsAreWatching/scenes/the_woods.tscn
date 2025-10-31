@@ -373,6 +373,9 @@ texture = ExtResource("14_eiinb")
 
 [node name="Fire" parent="." instance=ExtResource("7_g7f8q")]
 position = Vector2(65, -55)
+initialBurnTime = 90
+lightStrengthCap = 30
+lightMultiplier = 0.5
 
 [node name="ObjectiveDropoffPoint" parent="." instance=ExtResource("8_g7c4m")]
 z_index = -1
@@ -408,8 +411,9 @@ texture = ExtResource("12_cwwr0")
 offset = Vector2(0, -100)
 
 [node name="Beast" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("2_jaks5")]
-position = Vector2(3196, -1692)
+position = Vector2(610, 643)
 Player = NodePath("../Player")
 
 [connection signal="body_entered" from="Fire" to="Beast" method="_on_fire_body_entered"]
 [connection signal="Victory" from="ObjectiveDropoffPoint" to="." method="_on_objective_dropoff_point_victory"]
+[connection signal="caughtYou" from="Beast" to="." method="_on_beast_caught_you"]

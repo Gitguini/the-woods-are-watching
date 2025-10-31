@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal caughtYou
+
 @export var Player: Node2D
 
 @export var stalkSpeed = 100
@@ -8,6 +10,8 @@ extends CharacterBody2D
 
 @export var wanderingRadius = 2500
 @export var soundRadius = 1000
+
+@onready var animated_sprite_2D: AnimatedSprite2D = $AnimatedSprite2D
 
 var State = -1
 
@@ -76,6 +80,7 @@ func _physics_process(delta: float) -> void:
 			
 			pass
 	
+	setSprite()
 	setEyeRotation()
 	move_and_slide()
 
@@ -105,6 +110,72 @@ func velocityCalc(speed) -> void:
 	moveVector = moveVector * (compressionFactor * speed)
 	
 	velocity = moveVector
+
+func setSprite()->void:
+	
+	if velocity.length() < 1:
+		return
+	
+	#for directions, we can compare x and y components of movement
+	#if abs(y) is greater than abs(x), then we use y component to decide direction (up or down)
+	
+	var moveDir = 0;
+	var RIGHT = 0
+	var UP = 1
+	var LEFT = 2
+	var DOWN = 3
+	#0=right, 1=up, 2=left, 3=down
+	
+	#1. determine direction
+	if (abs(velocity.y) >= abs(velocity.x)): #vertical movement
+		if (velocity.y >= 0):
+			moveDir = DOWN
+		else:
+			moveDir = UP
+	else: #horizontal movement
+		if (velocity.x >= 0):
+			moveDir = RIGHT
+		else:
+			moveDir = LEFT
+	
+	#2. for each direction, use current state to set sprite
+	
+	if moveDir == RIGHT:
+		if State == CHASE:
+			animated_sprite_2D.animation = "chaseRight"
+		elif State == WANDER:
+			animated_sprite_2D.animation = "walkRight"
+		elif State == SNIFF:
+			animated_sprite_2D.animation = "stalkRight"
+		elif State == FEAR:
+			animated_sprite_2D.animation = "stalkRight"
+	elif moveDir == LEFT:
+		if State == CHASE:
+			animated_sprite_2D.animation = "chaseLeft"
+		elif State == WANDER:
+			animated_sprite_2D.animation = "walkLeft"
+		elif State == SNIFF:
+			animated_sprite_2D.animation = "stalkLeft"
+		elif State == FEAR:
+			animated_sprite_2D.animation = "stalkLeft"
+	elif moveDir == UP:
+		if State == CHASE:
+			animated_sprite_2D.animation = "chaseUp"
+		elif State == WANDER:
+			animated_sprite_2D.animation = "walkUp"
+		elif State == SNIFF:
+			animated_sprite_2D.animation = "stalkUp"
+		elif State == FEAR:
+			animated_sprite_2D.animation = "stalkUp"
+	else:
+		if State == CHASE:
+			animated_sprite_2D.animation = "chaseDown"
+		elif State == WANDER:
+			animated_sprite_2D.animation = "walkDown"
+		elif State == SNIFF:
+			animated_sprite_2D.animation = "stalkDown"
+		elif State == FEAR:
+			animated_sprite_2D.animation = "stalkDown"
 
 func SelectPointInRadius(point, r) -> Vector2:
 	var xAdd = (randi() % (r*2)) - r
@@ -155,3 +226,8 @@ func _on_chase_attention_span_timer_timeout() -> void:
 
 func _on_startup_timer_timeout() -> void:
 	State = WANDER
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if (body.name == "Player"):
+		caughtYou.emit()
