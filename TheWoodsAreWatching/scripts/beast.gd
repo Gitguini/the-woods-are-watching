@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 signal caughtYou
+signal chaseStart
+signal fearStart
+
 
 @export var Player: Node2D
 
@@ -46,6 +49,7 @@ func _physics_process(delta: float) -> void:
 			velocityCalc(walkSpeed)
 			
 			if $BeastEye.lookForPoint(Player.position):
+				chaseStart.emit()
 				State = CHASE
 			
 			pass
@@ -58,6 +62,7 @@ func _physics_process(delta: float) -> void:
 			velocityCalc(stalkSpeed)
 			
 			if $BeastEye.lookForPoint(Player.position):
+				chaseStart.emit()
 				State = CHASE
 			
 			pass
@@ -195,12 +200,7 @@ func setEyeRotation() -> void:
 	var angleDifference = velAngle - eyeAngle
 	
 	$BeastEye.transform = $BeastEye.transform.rotated(angleDifference)
-
-func _on_fire_body_entered(body: Node2D) -> void:
-	if body.name == "Beast":
-		State = FEAR
-		$FearTimer.start()
-		targetPoint = Vector2(randi() % 30000 - 15000, randi() % 15000 - 7500)
+	
 	
 
 func _on_noise_heard(origin) -> void:
@@ -231,3 +231,10 @@ func _on_startup_timer_timeout() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
 		caughtYou.emit()
+
+
+func _on_fire_beast_enter() -> void:
+		State = FEAR
+		fearStart.emit()
+		$FearTimer.start()
+		targetPoint = Vector2(randi() % 30000 - 15000, randi() % 15000 - 7500)

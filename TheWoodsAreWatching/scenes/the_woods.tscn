@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://lk7up7h4ai2o"]
+[gd_scene load_steps=28 format=3 uid="uid://lk7up7h4ai2o"]
 
 [ext_resource type="Script" uid="uid://lbm6iec6pak8" path="res://the_woods.gd" id="1_cwwr0"]
 [ext_resource type="Texture2D" uid="uid://cp1cx6l70e2bh" path="res://sprites/Environment/Ground/revisedGround.png" id="1_q8msk"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://ect3dh7cj6eu" path="res://sprites/Environment/worldBorder/borderTopRight.png" id="13_o1i0a"]
 [ext_resource type="Texture2D" uid="uid://c3mkmexkrleve" path="res://sprites/Environment/worldBorder/borderRight.png" id="14_eiinb"]
 [ext_resource type="PackedScene" uid="uid://dcnwgrbpe11qy" path="res://scenes/Collectible/wood.tscn" id="15_flcmy"]
+[ext_resource type="Script" uid="uid://dfwph2m28776m" path="res://scripts/ui.gd" id="22_qhmk3"]
+[ext_resource type="Script" uid="uid://bshuxnq2nmqsf" path="res://scenes/sound_manager.gd" id="23_sjxwj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8w8lk"]
 distance = -1700.0
@@ -47,9 +49,26 @@ numberOfObstructions = 100
 numberOfWoods = 50
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Fmod Files/Build/Desktop/Master.strings.bank", "res://Fmod Files/Build/Desktop/Master.bank", "res://Fmod Files/Build/Desktop/Campfire.bank", "res://Fmod Files/Build/Desktop/Ambience.bank", "res://Fmod Files/Build/Desktop/Bad Ending.bank", "res://Fmod Files/Build/Desktop/Good Ending.bank", "res://Fmod Files/Build/Desktop/Villain Theme.bank"]
+
+[node name="CampfirePlayer" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Campfire"
+event_guid = "{31bf6a40-223d-4787-99fe-3bb31e478a43}"
+
+[node name="BeastPlayer" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Villain"
+event_guid = "{af745bc5-5b80-42e3-a761-7f3d595e7236}"
+volume = 2.0
+
+[node name="AmbientPlayer" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Ambience"
+event_guid = "{7ce35b83-5368-4846-a0a2-31efa163dff1}"
+volume = 2.0
 
 [node name="Player" parent="." instance=ExtResource("2_ydvj3")]
 position = Vector2(-73, -54)
+
+[node name="FmodListener2D" type="FmodListener2D" parent="Player"]
 
 [node name="The Floor" type="Node2D" parent="."]
 z_index = -2
@@ -414,6 +433,27 @@ offset = Vector2(0, -100)
 position = Vector2(610, 643)
 Player = NodePath("../Player")
 
-[connection signal="body_entered" from="Fire" to="Beast" method="_on_fire_body_entered"]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("22_qhmk3")
+
+[node name="woodLabel" type="Label" parent="UI"]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 884.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 46
+text = "Wood: 0"
+
+[node name="SoundManager" type="Node" parent="." node_paths=PackedStringArray("campfireEventEmitter", "beastEventEmitter", "ambientEventEmitter")]
+script = ExtResource("23_sjxwj")
+campfireEventEmitter = NodePath("../CampfirePlayer")
+beastEventEmitter = NodePath("../BeastPlayer")
+ambientEventEmitter = NodePath("../AmbientPlayer")
+
+[connection signal="beastEnter" from="Fire" to="Beast" method="_on_fire_beast_enter"]
+[connection signal="playerEnter" from="Fire" to="SoundManager" method="_on_enter_campfire"]
+[connection signal="playerExit" from="Fire" to="SoundManager" method="_on_leave_campfire"]
 [connection signal="Victory" from="ObjectiveDropoffPoint" to="." method="_on_objective_dropoff_point_victory"]
 [connection signal="caughtYou" from="Beast" to="." method="_on_beast_caught_you"]
+[connection signal="chaseStart" from="Beast" to="SoundManager" method="_on_chase_start"]
+[connection signal="fearStart" from="Beast" to="SoundManager" method="_on_beast_scare"]

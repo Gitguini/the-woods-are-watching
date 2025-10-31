@@ -1,5 +1,10 @@
 extends Area2D
 
+signal playerEnter
+signal beastEnter
+signal playerExit
+
+
 @export var initialBurnTime = 30
 @export var woodBonus = 30
 @export var fearRadiusBase = 100
@@ -51,3 +56,15 @@ func _on_body_entered(body):
 		Global.wood = 0
 		Global.emit_signal("wood_changed", 0)
 		
+
+
+func _on_fear_radius_body_entered(body: Node2D) -> void:
+	if (body.name == "Player"):
+		playerEnter.emit()
+	elif body.name == "Beast":
+		beastEnter.emit()
+
+
+func _on_fear_radius_body_exited(body: Node2D) -> void:
+	if (body.name == "Player"):
+		playerExit.emit()
