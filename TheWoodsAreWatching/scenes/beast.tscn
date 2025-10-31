@@ -34,5 +34,6 @@ scale = Vector2(1, 0.632813)
 sprite_frames = SubResource("SpriteFrames_kpop0")
 
 [node name="BeastEye" parent="." instance=ExtResource("3_k885b")]
+position = Vector2(0, -53)
 
 [node name="WorldItemManager" parent="." instance=ExtResource("4_glk8t")]

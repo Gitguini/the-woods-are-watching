@@ -13,16 +13,24 @@ func _start():
 
 func _physics_process(delta: float) -> void:
 	
+	#STATE MACHINE RUNDOWN:
+	
+	
+	
 	
 	
 	move_and_slide()
+
+func setTarget(point)->void:
+	targetPoint = point
 
 #given a target to move towards and a speed value, generates the velocity vector
 #using yCompress
 func velocityCalc(speed) -> void:
 	
 	#1. get a base using the vector directly to the target and our Speed
-	var moveVector = (targetPoint - position).normalized() * speed 
+	var moveVector = (targetPoint - position).normalized()
+	
 	
 	#2. use trigonometry to reduce via yCompress
 	#final magnitude should be equal to: 
@@ -30,6 +38,10 @@ func velocityCalc(speed) -> void:
 	# originalXcomponent * cos(angle) 
 	# + originalYComponent * sin(angle) * YCompress )
 	#... a bit of a costly calculation to be making every frame, no? We'll see.
+	var Angle = moveVector.angle()
+	var compressionFactor = sqrt(moveVector.x * cos(Angle) + moveVector.y * sin(Angle) * $WorldItemManager.yCompress)
+	
+	moveVector = moveVector * (compressionFactor * speed)
 	
 	
 	
