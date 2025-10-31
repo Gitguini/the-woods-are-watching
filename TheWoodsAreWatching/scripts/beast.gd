@@ -31,7 +31,6 @@ func velocityCalc(speed) -> void:
 	#1. get a base using the vector directly to the target and our Speed
 	var moveVector = (targetPoint - position).normalized()
 	
-	
 	#2. use trigonometry to reduce via yCompress
 	#final magnitude should be equal to: 
 	# sqrt(
@@ -43,6 +42,9 @@ func velocityCalc(speed) -> void:
 	
 	moveVector = moveVector * (compressionFactor * speed)
 	
-	
-	
 	velocity = moveVector
+
+func SelectPointInRadius(point, r) -> Vector2:
+	var xAdd = (randi() % (r*2)) - r
+	var yAdd = ((randi() % (r*2)) - r) * $WorldItemManager.yCompress
+	return Vector2(point.x + xAdd, point.y + yAdd)

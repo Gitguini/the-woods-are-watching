@@ -9,6 +9,7 @@ script = ExtResource("1_uc3mg")
 [node name="WorldItemManager" parent="." instance=ExtResource("2_4qmad")]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = -6.0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://oon4up00hqis"
+path="res://.godot/imported/Growing Light.mp3-b17b62f74170822c9c4033c4faeff27f.mp3str"
+
+[deps]
+
+source_file="res://Fmod Files/Growing Light.mp3"
+dest_files=["res://.godot/imported/Growing Light.mp3-b17b62f74170822c9c4033c4faeff27f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
