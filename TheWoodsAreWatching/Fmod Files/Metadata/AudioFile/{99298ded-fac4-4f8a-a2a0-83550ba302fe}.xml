@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{99298ded-fac4-4f8a-a2a0-83550ba302fe}">
+		<property name="assetPath">
+			<value>Sound_Ideas,_FIRE,_CAMPFIRE_-_SMALL_CAMPFIRE_-_CRACKLING.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>99.964958333333328</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c6fff113-10aa-41f5-a8c5-bda14490db88}</destination>
+		</relationship>
+	</object>
+</objects>

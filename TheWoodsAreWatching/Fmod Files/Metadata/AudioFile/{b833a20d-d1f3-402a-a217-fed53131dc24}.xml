@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b833a20d-d1f3-402a-a217-fed53131dc24}">
+		<property name="assetPath">
+			<value>leaves_step_1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.29859410430839001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c6fff113-10aa-41f5-a8c5-bda14490db88}</destination>
+		</relationship>
+	</object>
+</objects>

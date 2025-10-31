@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{05f1d6cf-3658-4ab5-821f-dd7271578ac3}">
+		<property name="assetPath">
+			<value>699132__roisingleeson__kuipto_forrest_dusk_wild_life_crickets_birds_bugs_ambience_01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>38.784354166666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c6fff113-10aa-41f5-a8c5-bda14490db88}</destination>
+		</relationship>
+	</object>
+</objects>
