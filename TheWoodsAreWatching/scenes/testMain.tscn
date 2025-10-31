@@ -1,29 +1,19 @@
-[gd_scene load_steps=29 format=3 uid="uid://ftdylny7f22s"]
+[gd_scene load_steps=16 format=3 uid="uid://ftdylny7f22s"]
 
 [ext_resource type="Texture2D" uid="uid://blssupljk2i0y" path="res://sprites/worldBorderMockup.png" id="1_e0b43"]
 [ext_resource type="PackedScene" uid="uid://cmgj7ujop7f8w" path="res://scenes/player.tscn" id="2_a6ukn"]
 [ext_resource type="Script" uid="uid://dfwph2m28776m" path="res://scripts/ui.gd" id="3_r5fs2"]
 [ext_resource type="PackedScene" uid="uid://dcnwgrbpe11qy" path="res://scenes/Collectible/wood.tscn" id="4_bh6ie"]
 [ext_resource type="PackedScene" uid="uid://dlhg8qxhwsm2a" path="res://scenes/fire.tscn" id="5_5dkb0"]
-[ext_resource type="Texture2D" uid="uid://cbnm8jjq87p88" path="res://Sticks1.png" id="5_s5ul1"]
-[ext_resource type="Texture2D" uid="uid://dm7fubgsb60uq" path="res://Sticks2.png" id="6_220vc"]
+[ext_resource type="Texture2D" uid="uid://cbnm8jjq87p88" path="res://sprites/World Objects/Sticks1.png" id="5_s5ul1"]
+[ext_resource type="Texture2D" uid="uid://dm7fubgsb60uq" path="res://sprites/World Objects/Sticks2.png" id="6_220vc"]
 [ext_resource type="PackedScene" uid="uid://cue2r6iw5wum6" path="res://scenes/Collectible/objective_collectible.tscn" id="6_s5ul1"]
-[ext_resource type="Texture2D" uid="uid://dp34poxjk2sgg" path="res://Sticks3.png" id="7_xlkv8"]
-[ext_resource type="Texture2D" uid="uid://cyyem2wk68ge5" path="res://Sticks.png" id="8_01rew"]
+[ext_resource type="Texture2D" uid="uid://dp34poxjk2sgg" path="res://sprites/World Objects/Sticks3.png" id="7_xlkv8"]
+[ext_resource type="Texture2D" uid="uid://cyyem2wk68ge5" path="res://sprites/World Objects/Sticks.png" id="8_01rew"]
 [ext_resource type="PackedScene" uid="uid://brxypatsocv8n" path="res://scenes/objective_dropoff_point.tscn" id="8_xlkv8"]
-[ext_resource type="PackedScene" uid="uid://ci11qaufqb1c4" path="res://scenes/Obstructions/obstruction.tscn" id="9_01rew"]
-[ext_resource type="Texture2D" uid="uid://dcgj00rinhsec" path="res://sprites/Environment/Fir_Tree_1.png" id="11_5dkb0"]
-[ext_resource type="Texture2D" uid="uid://bvekur1k30x04" path="res://Ritual2.png" id="11_220vc"]
-[ext_resource type="Texture2D" uid="uid://dcgj3r66xjc3i" path="res://Ritual3.png" id="12_xlkv8"]
-[ext_resource type="Texture2D" uid="uid://dq6yc4b06cif1" path="res://Ritual.png" id="13_01rew"]
-[ext_resource type="Texture2D" uid="uid://c0vwmt7q4lhll" path="res://sprites/Environment/Fir_tree_2.png" id="17_sx601"]
-[ext_resource type="Texture2D" uid="uid://24x6xt5ft5f2" path="res://sprites/Environment/Fir_Tree_3.png" id="18_kvgj8"]
-[ext_resource type="Texture2D" uid="uid://cdxpfj6daklyp" path="res://sprites/Environment/Rock.png" id="19_kvgj8"]
-[ext_resource type="Texture2D" uid="uid://cwxto7maaatyi" path="res://sprites/Environment/Bush_1.png" id="20_bfvqa"]
-[ext_resource type="Texture2D" uid="uid://btp6avpkoev02" path="res://sprites/Environment/Rock_1.png" id="20_ou386"]
-[ext_resource type="Texture2D" uid="uid://ddwfm5lp1b3mr" path="res://sprites/Environment/Bush_2.png" id="21_6wy2s"]
-[ext_resource type="Texture2D" uid="uid://oho32jue23in" path="res://sprites/Environment/Rock_2.png" id="21_n2w3q"]
-[ext_resource type="Texture2D" uid="uid://bh78a13ey0ehe" path="res://sprites/Environment/Bush_3.png" id="22_ou386"]
+[ext_resource type="Texture2D" uid="uid://bvekur1k30x04" path="res://sprites/Objectives/Ritual2.png" id="11_220vc"]
+[ext_resource type="Texture2D" uid="uid://dcgj3r66xjc3i" path="res://sprites/Objectives/Ritual3.png" id="12_xlkv8"]
+[ext_resource type="Texture2D" uid="uid://dq6yc4b06cif1" path="res://sprites/Objectives/Ritual.png" id="13_01rew"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sx601"]
 animations = [{
@@ -39,57 +29,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_01rew")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xt1lx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_5dkb0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_sx601")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_kvgj8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7kkwt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_kvgj8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_ou386")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_n2w3q")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_n2w3q"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_bfvqa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_6wy2s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_ou386")
 }],
 "loop": true,
 "name": &"default",
@@ -142,7 +81,6 @@ texture = ExtResource("11_220vc")
 
 [node name="objective2" parent="." instance=ExtResource("6_s5ul1")]
 position = Vector2(94, 588)
-Type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="objective2"]
 position = Vector2(3, 11)
@@ -151,7 +89,6 @@ texture = ExtResource("12_xlkv8")
 
 [node name="objective3" parent="." instance=ExtResource("6_s5ul1")]
 position = Vector2(315, 579)
-Type = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="objective3"]
 scale = Vector2(0.107508, 0.0978522)
@@ -159,18 +96,6 @@ texture = ExtResource("13_01rew")
 
 [node name="ObjectiveDropoffPoint" parent="." instance=ExtResource("8_xlkv8")]
 position = Vector2(723, 486)
-
-[node name="Big Tree" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(-6, 190)
-scale = Vector2(5.44, 5.44)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Big Tree"]
-z_index = 1
-position = Vector2(-2.94118, -26.6544)
-scale = Vector2(0.0698523, 0.0698523)
-sprite_frames = SubResource("SpriteFrames_xt1lx")
 
 [node name="Wood2" parent="." instance=ExtResource("4_bh6ie")]
 position = Vector2(191, 301)
@@ -195,86 +120,3 @@ position = Vector2(82, 334)
 scale = Vector2(0.0813423, 0.0828591)
 sprite_frames = SubResource("SpriteFrames_sx601")
 frame = 3
-
-[node name="Big Tree2" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(604, 808)
-scale = Vector2(5.56164, 5.56164)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Big Tree2"]
-z_index = 1
-position = Vector2(-2.87686, -31.2858)
-scale = Vector2(0.0698523, 0.0698523)
-sprite_frames = SubResource("SpriteFrames_xt1lx")
-frame = 1
-
-[node name="rock" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(224, 477)
-scale = Vector2(1.80866, 4.8384)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="rock"]
-position = Vector2(-1.6587, -8.88724)
-scale = Vector2(0.0543092, 0.0237056)
-sprite_frames = SubResource("SpriteFrames_7kkwt")
-
-[node name="bush" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(59, 546)
-scale = Vector2(1.24573, 2.92297)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bush"]
-position = Vector2(0.802744, -9.92141)
-scale = Vector2(0.0717809, 0.0268389)
-sprite_frames = SubResource("SpriteFrames_n2w3q")
-
-[node name="bush2" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(417, 475)
-scale = Vector2(1.24573, 2.92297)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bush2"]
-position = Vector2(0.802744, -9.92141)
-scale = Vector2(0.0717809, 0.0268389)
-sprite_frames = SubResource("SpriteFrames_n2w3q")
-frame = 1
-
-[node name="bush3" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(298, 349)
-scale = Vector2(1.24573, 2.92297)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bush3"]
-position = Vector2(0.802769, -9.5793)
-scale = Vector2(0.0717809, 0.0268389)
-sprite_frames = SubResource("SpriteFrames_n2w3q")
-frame = 2
-
-[node name="rock2" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(213, 636)
-scale = Vector2(1.80866, 4.8384)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="rock2"]
-position = Vector2(-1.6587, -8.88724)
-scale = Vector2(0.0543092, 0.0237056)
-sprite_frames = SubResource("SpriteFrames_7kkwt")
-frame = 1
-
-[node name="rock3" parent="." instance=ExtResource("9_01rew")]
-y_sort_enabled = true
-position = Vector2(441, 619)
-scale = Vector2(1.80866, 4.8384)
-hitboxRadius = 150
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="rock3"]
-position = Vector2(-1.6587, -8.88724)
-scale = Vector2(0.0543092, 0.0237056)
-sprite_frames = SubResource("SpriteFrames_7kkwt")
-frame = 2

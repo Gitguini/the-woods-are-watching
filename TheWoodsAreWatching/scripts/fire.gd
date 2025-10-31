@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 	else:
 		fireLight.texture_scale = 0.0
 		ableToReceiveFuel = false
+		queue_free()
 
 func _on_body_entered(body):
 	

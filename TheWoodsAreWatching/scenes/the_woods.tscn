@@ -1,0 +1,405 @@
+[gd_scene load_steps=25 format=3 uid="uid://lk7up7h4ai2o"]
+
+[ext_resource type="Script" uid="uid://lbm6iec6pak8" path="res://the_woods.gd" id="1_cwwr0"]
+[ext_resource type="Texture2D" uid="uid://cp1cx6l70e2bh" path="res://sprites/Environment/Ground/revisedGround.png" id="1_q8msk"]
+[ext_resource type="PackedScene" uid="uid://cmgj7ujop7f8w" path="res://scenes/player.tscn" id="2_ydvj3"]
+[ext_resource type="Texture2D" uid="uid://cajjyep5kdx0" path="res://sprites/Environment/Ground/revisedGround2.png" id="3_ydvj3"]
+[ext_resource type="Texture2D" uid="uid://cggqo3gdujhuh" path="res://sprites/Environment/worldBorder/borderBottom.png" id="4_8w8lk"]
+[ext_resource type="Texture2D" uid="uid://c7dy1m2up50eg" path="res://sprites/Environment/worldBorder/borderBottomLeft.png" id="5_y3a55"]
+[ext_resource type="Texture2D" uid="uid://dwgbp1f13w1ki" path="res://sprites/Environment/worldBorder/borderBottomRight.png" id="6_g7f8q"]
+[ext_resource type="PackedScene" uid="uid://dlhg8qxhwsm2a" path="res://scenes/fire.tscn" id="7_g7f8q"]
+[ext_resource type="Texture2D" uid="uid://dyrdryhxe73vr" path="res://sprites/Environment/worldBorder/borderLeft.png" id="8_4gbw1"]
+[ext_resource type="PackedScene" uid="uid://brxypatsocv8n" path="res://scenes/objective_dropoff_point.tscn" id="8_g7c4m"]
+[ext_resource type="PackedScene" uid="uid://cue2r6iw5wum6" path="res://scenes/Collectible/objective_collectible.tscn" id="9_g7c4m"]
+[ext_resource type="Texture2D" uid="uid://dq6yc4b06cif1" path="res://sprites/Objectives/Ritual.png" id="10_pv33l"]
+[ext_resource type="Texture2D" uid="uid://cqcs36hkcjrsm" path="res://sprites/Environment/worldBorder/borderTopLeft.png" id="11_4hu5n"]
+[ext_resource type="Texture2D" uid="uid://bvekur1k30x04" path="res://sprites/Objectives/Ritual2.png" id="11_a4ory"]
+[ext_resource type="Texture2D" uid="uid://dcgj3r66xjc3i" path="res://sprites/Objectives/Ritual3.png" id="12_cwwr0"]
+[ext_resource type="Texture2D" uid="uid://dkdlqngqy57gh" path="res://sprites/Environment/worldBorder/borderTop.png" id="12_xrlhr"]
+[ext_resource type="PackedScene" uid="uid://ci11qaufqb1c4" path="res://scenes/Obstructions/obstruction.tscn" id="13_a4ory"]
+[ext_resource type="Texture2D" uid="uid://ect3dh7cj6eu" path="res://sprites/Environment/worldBorder/borderTopRight.png" id="13_o1i0a"]
+[ext_resource type="Texture2D" uid="uid://c3mkmexkrleve" path="res://sprites/Environment/worldBorder/borderRight.png" id="14_eiinb"]
+[ext_resource type="PackedScene" uid="uid://dcnwgrbpe11qy" path="res://scenes/Collectible/wood.tscn" id="15_flcmy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8w8lk"]
+distance = -1700.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y3a55"]
+normal = Vector2(0, 1)
+distance = -2048.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g7f8q"]
+normal = Vector2(1, 0)
+distance = -3700.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g7c4m"]
+normal = Vector2(-1, 0)
+distance = -3700.0
+
+[node name="TheWoods" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_cwwr0")
+obstructionScene = ExtResource("13_a4ory")
+woodScene = ExtResource("15_flcmy")
+numberOfObstructions = 100
+numberOfWoods = 50
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_ydvj3")]
+position = Vector2(-73, -54)
+
+[node name="The Floor" type="Node2D" parent="."]
+z_index = -2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Ground" type="Node2D" parent="The Floor"]
+z_index = -1
+position = Vector2(-2048, -1024)
+metadata/_edit_group_ = true
+
+[node name="RevisedGround" type="Sprite2D" parent="The Floor/Ground"]
+position = Vector2(1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround2" type="Sprite2D" parent="The Floor/Ground"]
+position = Vector2(-1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="RevisedGround3" type="Sprite2D" parent="The Floor/Ground"]
+position = Vector2(-1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround4" type="Sprite2D" parent="The Floor/Ground"]
+position = Vector2(1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="Ground2" type="Node2D" parent="The Floor"]
+z_index = -1
+position = Vector2(2048, -1024)
+metadata/_edit_group_ = true
+
+[node name="RevisedGround" type="Sprite2D" parent="The Floor/Ground2"]
+position = Vector2(1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround2" type="Sprite2D" parent="The Floor/Ground2"]
+position = Vector2(-1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="RevisedGround3" type="Sprite2D" parent="The Floor/Ground2"]
+position = Vector2(-1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround4" type="Sprite2D" parent="The Floor/Ground2"]
+position = Vector2(1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="Ground3" type="Node2D" parent="The Floor"]
+z_index = -1
+position = Vector2(-2048, 1024)
+metadata/_edit_group_ = true
+
+[node name="RevisedGround" type="Sprite2D" parent="The Floor/Ground3"]
+position = Vector2(1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround2" type="Sprite2D" parent="The Floor/Ground3"]
+position = Vector2(-1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="RevisedGround3" type="Sprite2D" parent="The Floor/Ground3"]
+position = Vector2(-1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround4" type="Sprite2D" parent="The Floor/Ground3"]
+position = Vector2(1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="Ground4" type="Node2D" parent="The Floor"]
+z_index = -1
+position = Vector2(2048, 1023)
+metadata/_edit_group_ = true
+
+[node name="RevisedGround" type="Sprite2D" parent="The Floor/Ground4"]
+position = Vector2(1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround2" type="Sprite2D" parent="The Floor/Ground4"]
+position = Vector2(-1024, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="RevisedGround3" type="Sprite2D" parent="The Floor/Ground4"]
+position = Vector2(-1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8msk")
+
+[node name="RevisedGround4" type="Sprite2D" parent="The Floor/Ground4"]
+position = Vector2(1024, -512)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ydvj3")
+
+[node name="World Border" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Bottom" type="Node2D" parent="World Border"]
+
+[node name="BorderBottom" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(-2504, 1736)
+texture = ExtResource("4_8w8lk")
+
+[node name="BorderBottom2" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(-3016, 1736)
+texture = ExtResource("4_8w8lk")
+flip_h = true
+
+[node name="BorderBottom3" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(-1480, 1736)
+texture = ExtResource("4_8w8lk")
+
+[node name="BorderBottom4" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(-1992, 1736)
+texture = ExtResource("4_8w8lk")
+flip_h = true
+
+[node name="BorderBottom5" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(-456, 1736)
+texture = ExtResource("4_8w8lk")
+
+[node name="BorderBottom6" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(-968, 1736)
+texture = ExtResource("4_8w8lk")
+flip_h = true
+
+[node name="BorderBottom7" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(568, 1736)
+texture = ExtResource("4_8w8lk")
+
+[node name="BorderBottom8" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(56, 1736)
+texture = ExtResource("4_8w8lk")
+flip_h = true
+
+[node name="BorderBottom9" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(1591, 1736)
+texture = ExtResource("4_8w8lk")
+
+[node name="BorderBottom10" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(1079, 1736)
+texture = ExtResource("4_8w8lk")
+flip_h = true
+
+[node name="BorderBottom11" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(2615, 1736)
+texture = ExtResource("4_8w8lk")
+
+[node name="BorderBottom12" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(2103, 1736)
+texture = ExtResource("4_8w8lk")
+flip_h = true
+
+[node name="BorderBottom13" type="Sprite2D" parent="World Border/Bottom"]
+position = Vector2(3127, 1736)
+texture = ExtResource("4_8w8lk")
+flip_h = true
+
+[node name="Left" type="Node2D" parent="World Border"]
+
+[node name="BorderLeft" type="Sprite2D" parent="World Border/Left"]
+position = Vector2(-3784, 968)
+texture = ExtResource("8_4gbw1")
+
+[node name="BorderLeft2" type="Sprite2D" parent="World Border/Left"]
+position = Vector2(-3784, 456)
+texture = ExtResource("8_4gbw1")
+
+[node name="BorderLeft3" type="Sprite2D" parent="World Border/Left"]
+position = Vector2(-3784, -56)
+texture = ExtResource("8_4gbw1")
+
+[node name="BorderLeft4" type="Sprite2D" parent="World Border/Left"]
+position = Vector2(-3784, -568)
+texture = ExtResource("8_4gbw1")
+
+[node name="BorderLeft5" type="Sprite2D" parent="World Border/Left"]
+position = Vector2(-3784, -1080)
+texture = ExtResource("8_4gbw1")
+
+[node name="BorderLeft6" type="Sprite2D" parent="World Border/Left"]
+position = Vector2(-3784, -1592)
+texture = ExtResource("8_4gbw1")
+
+[node name="BorderBottomLeft" type="Sprite2D" parent="World Border"]
+position = Vector2(-3784, 1736)
+texture = ExtResource("5_y3a55")
+
+[node name="BorderBottomRight" type="Sprite2D" parent="World Border"]
+position = Vector2(3895, 1736)
+texture = ExtResource("6_g7f8q")
+
+[node name="Physical" type="Node2D" parent="World Border"]
+
+[node name="Bottom" type="StaticBody2D" parent="World Border/Physical"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Border/Physical/Bottom"]
+shape = SubResource("WorldBoundaryShape2D_8w8lk")
+
+[node name="Top" type="StaticBody2D" parent="World Border/Physical"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Border/Physical/Top"]
+shape = SubResource("WorldBoundaryShape2D_y3a55")
+
+[node name="Left" type="StaticBody2D" parent="World Border/Physical"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Border/Physical/Left"]
+shape = SubResource("WorldBoundaryShape2D_g7f8q")
+
+[node name="Right" type="StaticBody2D" parent="World Border/Physical"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Border/Physical/Right"]
+shape = SubResource("WorldBoundaryShape2D_g7c4m")
+
+[node name="BorderTopLeft" type="Sprite2D" parent="World Border"]
+position = Vector2(-3784, -2048)
+texture = ExtResource("11_4hu5n")
+
+[node name="Top" type="Node2D" parent="World Border"]
+
+[node name="BorderTop" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(-3016, -2048)
+texture = ExtResource("12_xrlhr")
+
+[node name="BorderTop2" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(-2504, -2048)
+texture = ExtResource("12_xrlhr")
+flip_h = true
+
+[node name="BorderTop3" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(-1992, -2048)
+texture = ExtResource("12_xrlhr")
+
+[node name="BorderTop4" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(-1480, -2048)
+texture = ExtResource("12_xrlhr")
+flip_h = true
+
+[node name="BorderTop5" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(-968, -2048)
+texture = ExtResource("12_xrlhr")
+
+[node name="BorderTop6" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(-456, -2048)
+texture = ExtResource("12_xrlhr")
+flip_h = true
+
+[node name="BorderTop7" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(56, -2048)
+texture = ExtResource("12_xrlhr")
+
+[node name="BorderTop8" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(568, -2048)
+texture = ExtResource("12_xrlhr")
+flip_h = true
+
+[node name="BorderTop9" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(1080, -2048)
+texture = ExtResource("12_xrlhr")
+
+[node name="BorderTop10" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(1592, -2048)
+texture = ExtResource("12_xrlhr")
+flip_h = true
+
+[node name="BorderTop11" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(2104, -2048)
+texture = ExtResource("12_xrlhr")
+
+[node name="BorderTop12" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(2616, -2048)
+texture = ExtResource("12_xrlhr")
+flip_h = true
+
+[node name="BorderTop13" type="Sprite2D" parent="World Border/Top"]
+position = Vector2(3128, -2048)
+texture = ExtResource("12_xrlhr")
+
+[node name="BorderTopRight" type="Sprite2D" parent="World Border"]
+position = Vector2(3896, -2048)
+texture = ExtResource("13_o1i0a")
+
+[node name="Right" type="Node2D" parent="World Border"]
+
+[node name="BorderRight" type="Sprite2D" parent="World Border/Right"]
+position = Vector2(3895, 969)
+texture = ExtResource("14_eiinb")
+
+[node name="BorderRight2" type="Sprite2D" parent="World Border/Right"]
+position = Vector2(3895, 457)
+texture = ExtResource("14_eiinb")
+
+[node name="BorderRight3" type="Sprite2D" parent="World Border/Right"]
+position = Vector2(3895, -55)
+texture = ExtResource("14_eiinb")
+
+[node name="BorderRight4" type="Sprite2D" parent="World Border/Right"]
+position = Vector2(3895, -567)
+texture = ExtResource("14_eiinb")
+
+[node name="BorderRight5" type="Sprite2D" parent="World Border/Right"]
+position = Vector2(3895, -1079)
+texture = ExtResource("14_eiinb")
+
+[node name="BorderRight6" type="Sprite2D" parent="World Border/Right"]
+position = Vector2(3895, -1591)
+texture = ExtResource("14_eiinb")
+
+[node name="Fire" parent="." instance=ExtResource("7_g7f8q")]
+position = Vector2(65, -55)
+
+[node name="ObjectiveDropoffPoint" parent="." instance=ExtResource("8_g7c4m")]
+z_index = -1
+position = Vector2(0, -358)
+
+[node name="Focus1" parent="." instance=ExtResource("9_g7c4m")]
+position = Vector2(-577, 139)
+
+[node name="Sprite2D" type="Sprite2D" parent="Focus1"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("10_pv33l")
+offset = Vector2(0, -100)
+
+[node name="Focus2" parent="." instance=ExtResource("9_g7c4m")]
+position = Vector2(-503, 218)
+type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Focus2"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("11_a4ory")
+offset = Vector2(0, -50)
+
+[node name="Focus3" parent="." instance=ExtResource("9_g7c4m")]
+position = Vector2(-373, 298)
+type = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Focus3"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("12_cwwr0")
+offset = Vector2(0, -100)
+
+[connection signal="Victory" from="ObjectiveDropoffPoint" to="." method="_on_objective_dropoff_point_victory"]

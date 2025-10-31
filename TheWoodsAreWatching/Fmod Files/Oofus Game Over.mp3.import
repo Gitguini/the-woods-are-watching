@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://opvj1bkrwsg5"
+path="res://.godot/imported/Oofus Game Over.mp3-ebd789d1a90171cf4857f67428879885.mp3str"
+
+[deps]
+
+source_file="res://Fmod Files/Oofus Game Over.mp3"
+dest_files=["res://.godot/imported/Oofus Game Over.mp3-ebd789d1a90171cf4857f67428879885.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

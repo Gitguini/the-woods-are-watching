@@ -1,13 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci11qaufqb1c4"]
+[gd_scene load_steps=13 format=3 uid="uid://ci11qaufqb1c4"]
 
 [ext_resource type="Script" uid="uid://c1vljrbt5do4p" path="res://scripts/obstruction.gd" id="1_4fghw"]
+[ext_resource type="Texture2D" uid="uid://dcgj00rinhsec" path="res://sprites/Obstructions/Fir_Tree_1.png" id="2_ydodc"]
+[ext_resource type="Texture2D" uid="uid://c0vwmt7q4lhll" path="res://sprites/Obstructions/Fir_tree_2.png" id="3_2gl3n"]
 [ext_resource type="PackedScene" uid="uid://dqfrkriykhcw" path="res://scenes/world_item_manager.tscn" id="3_b6uxa"]
+[ext_resource type="Texture2D" uid="uid://24x6xt5ft5f2" path="res://sprites/Obstructions/Fir_Tree_3.png" id="4_probt"]
+[ext_resource type="Texture2D" uid="uid://cwxto7maaatyi" path="res://sprites/Obstructions/Bush_1.png" id="5_j4s8s"]
+[ext_resource type="Texture2D" uid="uid://ddwfm5lp1b3mr" path="res://sprites/Obstructions/Bush_2.png" id="6_jqwxb"]
+[ext_resource type="Texture2D" uid="uid://bh78a13ey0ehe" path="res://sprites/Obstructions/Bush_3.png" id="7_e06cp"]
+[ext_resource type="Texture2D" uid="uid://cdxpfj6daklyp" path="res://sprites/Obstructions/Rock.png" id="8_y1w5k"]
+[ext_resource type="Texture2D" uid="uid://btp6avpkoev02" path="res://sprites/Obstructions/Rock_1.png" id="9_bkfru"]
+[ext_resource type="Texture2D" uid="uid://oho32jue23in" path="res://sprites/Obstructions/Rock_2.png" id="10_djjjt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blfnc"]
-size = Vector2(50, 10)
+size = Vector2(150, 30)
 
 [node name="Obstruction" type="StaticBody2D"]
 script = ExtResource("1_4fghw")
+tree1 = ExtResource("2_ydodc")
+tree2 = ExtResource("3_2gl3n")
+tree3 = ExtResource("4_probt")
+rock1 = ExtResource("8_y1w5k")
+rock2 = ExtResource("9_bkfru")
+rock3 = ExtResource("10_djjjt")
+bush1 = ExtResource("5_j4s8s")
+bush2 = ExtResource("6_jqwxb")
+bush3 = ExtResource("7_e06cp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_blfnc")

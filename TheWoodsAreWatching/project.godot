@@ -18,7 +18,7 @@ General/is_memory_tracking_enabled=false
 "Software Format/speaker_mode"=3
 "Software Format/raw_speaker_count"=0
 General/default_listener_count=1
-General/banks_path="res://audio/banks"
+General/banks_path="res://Fmod Files/Build/Desktop"
 Plugins/path_to_plugin_configuration=""
 General/should_load_by_name=false
 DSP/dsp_buffer_size=512
@@ -30,7 +30,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="The Woods Are Watching"
-run/main_scene="uid://ftdylny7f22s"
+run/main_scene="uid://djww75slaxvqn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://sprites/icon.svg"
 

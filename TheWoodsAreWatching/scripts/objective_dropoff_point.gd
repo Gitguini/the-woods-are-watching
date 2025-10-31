@@ -1,5 +1,6 @@
 extends Area2D
 
+signal Victory
 
 
 func _ready() -> void:
@@ -29,3 +30,4 @@ func _on_body_entered(body):
 		#idk who'll do that
 		if EverythingCollected:
 			print("You Have Won!!!!!!!!!!!!!!!1!!!11!")
+			Victory.emit()
